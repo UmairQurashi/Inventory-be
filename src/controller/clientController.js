@@ -25,16 +25,6 @@ exports.getClient = async (req, res, next) => {
   }
 };
 
-exports.identifyClient = async (req, res, next) => {
-  try {
-    const identifyClient = await Client.findById({ _id: req.params.id });
-    res.status(200).send(identifyClient);
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-
 exports.deleteClient = async (req, res, next) => {
   try {
     const removeClient = await Client.findByIdAndDelete(req.params.id);
